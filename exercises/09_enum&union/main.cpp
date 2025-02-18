@@ -8,9 +8,9 @@
 // 因此 `enum` 定义会污染命名空间。
 enum ColorEnum : unsigned char {
     COLOR_RED = 31,
-    COLOR_GREEN,
-    COLOR_YELLOW,
-    COLOR_BLUE,
+    COLOR_GREEN,//32
+    COLOR_YELLOW,//33
+    COLOR_BLUE, //34
 };
 
 // 有作用域枚举型是 C++ 引入的类型安全枚举。
@@ -37,7 +37,7 @@ ColorEnum convert_by_pun(Color c) {
 
     TypePun pun;
     // TODO: 补全类型双关转换
-
+    pun.e = static_cast<ColorEnum>(c);
     return pun.e;
 }
 
